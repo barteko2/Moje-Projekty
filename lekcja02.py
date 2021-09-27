@@ -57,3 +57,18 @@ print(matched_dz)
 
 ends = [x[2] for x in matched_dz]
 print("wszystkie końcówki adresów: "+str(ends))
+
+#!!!!!!!!!!!!!!!METODA FINDITER!!!!!!!!!!!!!!!!!!! metoda szuka, a jak już znajdzie to się zatrzymuje
+matched_finditer = re.finditer(r'\w+\@\w+\.\w+', cc_list)
+print("A TERAZ FINDITER")
+print(matched_finditer)
+print(next(matched_finditer))
+print(next(matched_finditer))
+print(next(matched_finditer))
+print(next(matched_finditer))
+
+#a teraz finditer tylko w pętli FOR
+matched_for = re.finditer("(?P<nazwa>\w+)\@(?P<SLD>\w+)\.(?P<TLD>\w+)",cc_list)
+for m in matched_for:
+    print(m.groupdict())
+
