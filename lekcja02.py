@@ -72,3 +72,20 @@ matched_for = re.finditer("(?P<nazwa>\w+)\@(?P<SLD>\w+)\.(?P<TLD>\w+)",cc_list)
 for m in matched_for:
     print(m.groupdict())
 
+#!!!!!!!!!!!!!!!!!!!!!re.sub - podstawianie!!!!!!!!!!!!!!!!!
+print("!!!!!!!!!!!!!PODSTAWIANIE RE.SUB")
+print(re.sub("\d", "#", "wprowadziłeś kod 09876"))
+users = re.sub("(?P<nazwa>\w+)\@(?P<SLD>\w+)\.(?P<TLD>\w+)", "\g<TLD>.\g<SLD>.\g<nazwa>", cc_list)      #podstawiło poszczególne grupy w innych miejscach
+print(users)
+'''
+wynik:
+Bartek Oberc<com.gmail.boberc>,
+Roman Polanski<com.gmail.rpolanski>,
+Henryk Sienkiewicz<com.gmail.hsienkiewicz>,
+Bob Marley<com.gmail.bmarley>
+'''
+
+#!!!!!!!!!!!!!!!!KOMPILOWANIE DO OBIEKTU ZAPEWNIA WZROST WYDAJNOŚCI
+regex = re.compile(r'\w+\@\w+\.\w+')
+print(regex.search(cc_list))
+
