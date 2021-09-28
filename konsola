@@ -1,0 +1,27 @@
+var_ls = !ls -l
+type(var_ls)
+Out[5]: IPython.utils.text.SList
+df = !df
+df.sort(3,nums = True)
+Out[7]:
+['Filesystem     1K-blocks     Used Available Use% Mounted on',
+ 'tmpfs               4096        0      4096   0% /sys/fs/cgroup',
+ 'tmpfs               5120        4      5116   1% /run/lock',
+ 'tmpfs             486228     1484    484744   1% /run/user/1000',
+ 'tmpfs             486232     1372    484860   1% /run',
+ '/dev/sda2         524252     5340    518912   2% /boot/efi',
+ 'tmpfs            2431148     1032   2430116   1% /dev/shm',
+ '/dev/sda3       21095612 10259460   9741496  52% /']
+ls = !ls -l /usr/bin
+ls.grep("kill")
+Out[9]:
+['-rwxr-xr-x 1 root root       30952 maj 28 18:50 kill',
+ '-rwxr-xr-x 1 root root       32176 lut 16  2021 killall',
+ 'lrwxrwxrwx 1 root root          14 wrz 28 13:52 pidof -> /sbin/killall5',
+ 'lrwxrwxrwx 1 root root           5 maj 28 18:50 pkill -> pgrep',
+ '-rwxr-xr-x 1 root root       30952 maj 28 18:50 skill',
+ 'lrwxrwxrwx 1 root root           5 maj 28 18:50 snice -> skill',
+ '-rwxr-xr-x 1 root root       14648 lut 29  2020 xkill']
+
+!python3 print_time.py
+16:10:57.032769
