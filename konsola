@@ -25,3 +25,77 @@ Out[9]:
 
 !python3 print_time.py
 16:10:57.032769
+
+
+ROZDZIAŁ II
+
+file_path = 'bookofdreams.txt'
+open_file = open(file_path,'r')
+import os
+import sys
+os.getcwd()
+Out[21]: '/home/bartek'
+ls
+Desktop/
+Documents/
+Downloads/
+Music/
+Pictures/
+Public/
+PycharmProjects/
+snap/
+Templates/
+Videos/
+cd PycharmProjects
+/home/bartek/PycharmProjects
+ll
+total 4
+drwxrwxr-x 4 bartek 4096 wrz 30 00:37 Moje-Projekty/
+ls
+Moje-Projekty/
+cd Moje-Projekty
+/home/bartek/PycharmProjects/Moje-Projekty
+ls
+bookofdreams.txt
+konsola
+lekcja01.py
+lekcja02.py
+lekcja03.py
+rozdzial2.py
+zadanie01.py
+open_file = open(file_path,'r')
+text = open_file.read()
+len(text)
+Out[30]: 13
+text[10]
+Out[31]: 'f'
+open_file
+Out[32]: <_io.TextIOWrapper name='bookofdreams.txt' mode='r' encoding='UTF-8'>
+open_file.close()
+
+open_file = open(file_path, 'r')
+text = open_file.readlines()
+len(text)
+Out[36]: 9
+len(text)
+Out[37]: 9
+text[100]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/IPython/core/interactiveshell.py", line 3444, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-38-c8b5ecea273b>", line 1, in <module>
+    text[100]
+IndexError: list index out of range
+text[8]
+Out[39]: 'To jednak nie uchroniło Dynama przed utratą bramki.'
+open_file.close()
+
+
+!!!!używając instrukcję with nie musimy zamykać pliku, bo instrukcja sama zamknie na końcu pliku
+with open(file_path, 'r') as open_file:
+    text = open_file.readlines()
+
+text[1]
+Out[42]: 'Taką decyzję podjął Mircea Lucescu. Rumuński trener chciał zaskoczyć Bayern, stąd taka zmiana.\n'
+open_file.closed
+Out[43]: True
