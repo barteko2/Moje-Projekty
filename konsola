@@ -99,3 +99,143 @@ text[1]
 Out[42]: 'Taką decyzję podjął Mircea Lucescu. Rumuński trener chciał zaskoczyć Bayern, stąd taka zmiana.\n'
 open_file.closed
 Out[43]: True
+
+
+!!!!!!!!!!!!!!!!!!!!rozdział 2 - pliki
+file.path = '1.pdf'
+Traceback (most recent call last):
+  File "C:\Users\bartek\PycharmProjects\pythonProject\venv\lib\site-packages\IPython\core\interactiveshell.py", line 3444, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-2-2894d727e6cc>", line 1, in <module>
+    file.path = '1.pdf'
+NameError: name 'file' is not defined
+file_path = '1.pdf'
+with open(file_path,'rb') as open_file:
+    btext = open_file.read()
+
+Traceback (most recent call last):
+  File "C:\Users\bartek\PycharmProjects\pythonProject\venv\lib\site-packages\IPython\core\interactiveshell.py", line 3444, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-4-0d10a14f37b7>", line 1, in <module>
+    with open(file_path,'rb') as open_file:
+FileNotFoundError: [Errno 2] No such file or directory: '1.pdf'
+file.path = 'C:/Users/bartek/PycharmProjects/Moje-Projekty1.pdf'
+Traceback (most recent call last):
+  File "C:\Users\bartek\PycharmProjects\pythonProject\venv\lib\site-packages\IPython\core\interactiveshell.py", line 3444, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-5-2eefb74ae682>", line 1, in <module>
+    file.path = 'C:/Users/bartek/PycharmProjects/Moje-Projekty1.pdf'
+NameError: name 'file' is not defined
+file_path = 'C:/Users/bartek/PycharmProjects/Moje-Projekty1.pdf'
+with open(file_path,'rb') as open_file:
+    btext = open_file.read()
+
+
+file_path = 'C:/Users/bartek/PycharmProjects/Moje-Projekty1/1.pdf'
+with open(file_path,'rb') as open_file:
+    btext = open_file.read()
+
+Traceback (most recent call last):
+  File "C:\Users\bartek\PycharmProjects\pythonProject\venv\lib\site-packages\IPython\core\interactiveshell.py", line 3444, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-9-0d10a14f37b7>", line 1, in <module>
+    with open(file_path,'rb') as open_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'C:/Users/bartek/PycharmProjects/Moje-Projekty1/1.pdf'
+cd c
+[WinError 2] Nie można odnaleźć określonego pliku: 'c'
+C:\Users\bartek\PycharmProjects\pythonProject
+cd c
+[WinError 2] Nie można odnaleźć określonego pliku: 'c'
+C:\Users\bartek\PycharmProjects\pythonProject
+ls
+ Volume in drive C has no label.
+ Volume Serial Number is 6842-67EF
+ Directory of C:\Users\bartek\PycharmProjects\pythonProject
+2021-09-27  20:22    <DIR>          .
+2021-09-27  20:22    <DIR>          ..
+2021-10-13  22:28    <DIR>          .idea
+2021-09-25  21:21    <DIR>          venv
+               0 File(s)              0 bytes
+               4 Dir(s)  53�350�342�656 bytes free
+file_path = '1.pdf'
+with open(file_path,'rb') as open_file:
+    btext = open_file.read()
+
+Traceback (most recent call last):
+  File "C:\Users\bartek\PycharmProjects\pythonProject\venv\lib\site-packages\IPython\core\interactiveshell.py", line 3444, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-14-0d10a14f37b7>", line 1, in <module>
+    with open(file_path,'rb') as open_file:
+FileNotFoundError: [Errno 2] No such file or directory: '1.pdf'
+file_path = 'bookofdreams.txt'
+open_file = open(file_path, 'r')
+Traceback (most recent call last):
+  File "C:\Users\bartek\PycharmProjects\pythonProject\venv\lib\site-packages\IPython\core\interactiveshell.py", line 3444, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-16-776feff0fb84>", line 1, in <module>
+    open_file = open(file_path, 'r')
+FileNotFoundError: [Errno 2] No such file or directory: 'bookofdreams.txt'
+pwd
+Out[17]: 'C:\\Users\\bartek\\PycharmProjects\\pythonProject'
+file_path = 'C:\\Users\\bartek\\PycharmProjects\\pythonProject\\bookofdreams.txt'
+open_file = open(file_path, 'r')
+Traceback (most recent call last):
+  File "C:\Users\bartek\PycharmProjects\pythonProject\venv\lib\site-packages\IPython\core\interactiveshell.py", line 3444, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "<ipython-input-19-776feff0fb84>", line 1, in <module>
+    open_file = open(file_path, 'r')
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\bartek\\PycharmProjects\\pythonProject\\bookofdreams.txt'
+file_path = "C:\\Users\\bartek\\PycharmProjects\\pythonProject\\bookofdreams.txt"
+open_file = open(file_path, 'r')
+
+os.getcwd()
+
+import os
+os.getcwd()
+Out[24]: 'C:\\Users\\bartek\\PycharmProjects\\pythonProject'
+cd C:\\Users\\bartek\\PycharmProjects\\Moje-Projekty
+C:\Users\bartek\PycharmProjects\Moje-Projekty
+os.getcwd()
+Out[26]: 'C:\\Users\\bartek\\PycharmProjects\\Moje-Projekty'
+file_path = '1.pdf'
+with open(file_path,'rb') as open_file:
+    btext = open_file.read()
+
+btext[0]
+Out[29]: 37
+btext[:25]
+
+cat .\.envrc
+zawartość tekstu:
+export STAGE=PROD
+export TABLE_ID=token-storage-1234
+
+import pathlib
+path = pathlib.Path("konsola")
+path.read_text()
+os.getcwd()
+Out[41]: 'C:\\Users\\bartek\\PycharmProjects\\Moje-Projekty'
+path = pathlib.Path("C:\\Users\\bartek\\PycharmProjects\\Moje-Projekty\\konsola")
+path.read_text()
+
+path = pathlib.Path("C:\\Users\\bartek\\PycharmProjects\\Moje-Projekty\\bookofdreams.txt")
+path.read_text()
+Out[45]: 'Niespodziewanie reprezentanta Polski zabrakĹ‚o w wyjĹ›ciowym skĹ‚adzie w Ĺ›rodowym starciu na Allianz Arena.\nTakÄ… decyzjÄ™ podjÄ…Ĺ‚ Mircea Lucescu. RumuĹ„ski trener chciaĹ‚ zaskoczyÄ‡ Bayern, stÄ…d taka zmiana.\nNie wiadomo do koĹ„ca, na czym miaĹ‚a polegaÄ‡ strategia goĹ›ci, ale trzeba przyznaÄ‡, ĹĽe byĹ‚a nieskuteczna.\nPiĹ‚karze Juliana Nagelsmanna od poczÄ…tku narzucili swoje tempo gry.\nPierwszÄ… groĹşnÄ… akcjÄ™ Bayern stworzyĹ‚ w 10. minucie.\nSerge Gnabry znalazĹ‚ siÄ™ blisko pola karnego, po czym precyzyjnie dograĹ‚ piĹ‚kÄ™ na gĹ‚owÄ™ Lewandowskiego.\nNapastnik dobrze przymierzyĹ‚, ale znakomicie w bramce zachowaĹ‚ siÄ™ Heorhij Buszczan.\n27-latek zdoĹ‚aĹ‚ odbiÄ‡ piĹ‚kÄ™ nad poprzeczkÄ™.\nTo jednak nie uchroniĹ‚o Dynama przed utratÄ… bramki.'
+with open('service-policy.json','r') as opened_file:
+    policy = opened_file.readlines()
+
+print(policy)
+['{\n', ' "Version": "2012-10-17",\n', ' "Statement": {\n', ' "Effect": "Allow",\n', ' "Action": "service-prefix:action-name",\n', ' "Resource": "*",\n', ' "Condition": {\n', ' "DateGreaterThan": {"aws:CurrentTime": "2017-07-01T00:00:00Z"},\n', ' "DateLessThan": {"aws:CurrentTime": "2017-12-31T23:59:59Z"}\n', '  }\n', ' }\n', '}']
+import json
+with open('service-policy.json','r') as opened_file:
+    policy = json.load(opened_file)
+
+from pprint import pprint
+
+!!!!!!!!!!!Moduł pprint automatycznie formatuje obiekty Pythona w celu ich wydruku.
+Wyniki metod tego modułu w przypadku zagnieżdżonych struktur danych są —
+ w porównaniu z innymi modułami — często bardziej czytelne i wygodniejsze
+ w użyciu
+
+
+najprostsze formatowania: json,xml,yaml, csv
