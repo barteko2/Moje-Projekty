@@ -27,6 +27,6 @@ reg += r'\[(?P<Time>08/Nov/\d{4}:\d{2}:\d{2}:\d{2} [-+]\d{4})\]'
 reg += r' (?P<Request>"GET .+")'
 n = re.search(reg,line)
 #print(n.group('IP','User','Time','Request'))
-matched = re.finditer(reg, access_log)
-for m in matched:
-    print(n.group('IP'))
+#matched = re.finditer(reg, access_log)
+#for m in matched:
+#    print(n.group('IP'))
