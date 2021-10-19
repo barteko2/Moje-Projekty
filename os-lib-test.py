@@ -50,6 +50,8 @@ def find_rc(rc_name=".examplerc"):
 
 print(find_rc())
 
+
+#!!!!!!!!!!!!!!!!!!METODA WYPISUJE WSZYSTKIE PLIKI I KATALOGI W KATALOGU WRAZ Z INFORMACJAMI NA ICH TEMAT.!!!!!!!!!!!!
 def walk_path(parent_path):
     print(f"sprawdzanie: {parent_path}")
     childs = os.listdir(parent_path)
@@ -65,7 +67,26 @@ def walk_path(parent_path):
         elif os.path.isdir(child_path):
             walk_path(child_path)
 
-    if __name__ == '__main__':
-        fire.Fire()
+    #if __name__ == '__main__':
+    #    fire.Fire()
 
-walk_path("/home/bartek/PycharmProjects/Moje-Projekty")
+#walk_path("/home/bartek/PycharmProjects/Moje-Projekty")
+
+#PRZEGLĄDANIE DRZEW KATALOGÓW ZA POMOCĄ FUNKCJI OS.WALK
+
+def walk_path_oswalk(parent_path):
+    for parent_path, directories, files in os.walk(parent_path):
+        print(f"sprawdzanie: {parent_path}")
+        for file_name in files:
+            file_path = os.path.join(parent_path, file_name)
+            last_access = os.path.getatime(file_path)
+            size = os.path.getsize(file_path)
+            if size > 1000:
+                print(f"Plik: {file_path}")
+                print(f"\tostatni dostęp: {last_access}")
+                print(f"\trozmiar:{size}")
+
+print(f"A TERAZ OS.WALK")
+walk_path_oswalk("/home/bartek/PycharmProjects/Moje-Projekty")
+
+
