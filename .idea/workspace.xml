@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="caac3974-af4f-4988-9d29-2694482ac0fa" name="Changes" comment="strona 80 rozdział 3 atrybut sys.argv">
-      <change afterPath="$PROJECT_DIR$/argparsetest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/argv_02.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clicklib.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dekoratory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/firelibtest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/numbatest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/podparsery.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/say_it.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/simple_plugins.py" afterDir="false" />
+    <list default="true" id="caac3974-af4f-4988-9d29-2694482ac0fa" name="Changes" comment="zakończono 1 rozdział">
+      <change afterPath="$PROJECT_DIR$/r3zad1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clicklib.py" beforeDir="false" afterPath="$PROJECT_DIR$/clicklib.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rozdzial3.py" beforeDir="false" afterPath="$PROJECT_DIR$/rozdzial3.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,9 +36,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.numbatest">
+  <component name="RunManager" selected="Python.r3zad1">
     <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Moje-Projekty" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -67,61 +60,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="clicklib" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="lekcja01" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Moje-Projekty" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="/usr/bin/python3.9" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/clicklib.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="dekoratory" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Moje-Projekty" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dekoratory.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="firelibtest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Moje-Projekty" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/firelibtest.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lekcja01.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -151,7 +102,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="simple_plugins" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="os-lib-test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Moje-Projekty" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -163,7 +114,49 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/simple_plugins.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/os-lib-test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="r3zad1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Moje-Projekty" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/r3zad1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="rozdzial3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Moje-Projekty" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rozdzial3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -196,19 +189,19 @@
     <list>
       <item itemvalue="Python.Unnamed" />
       <item itemvalue="Python.zadanie01" />
-      <item itemvalue="Python.dekoratory" />
-      <item itemvalue="Python.clicklib" />
-      <item itemvalue="Python.firelibtest" />
-      <item itemvalue="Python.simple_plugins" />
+      <item itemvalue="Python.lekcja01" />
+      <item itemvalue="Python.os-lib-test" />
+      <item itemvalue="Python.rozdzial3" />
       <item itemvalue="Python.numbatest" />
+      <item itemvalue="Python.r3zad1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.r3zad1" />
+        <item itemvalue="Python.rozdzial3" />
         <item itemvalue="Python.numbatest" />
-        <item itemvalue="Python.simple_plugins" />
-        <item itemvalue="Python.firelibtest" />
-        <item itemvalue="Python.clicklib" />
-        <item itemvalue="Python.dekoratory" />
+        <item itemvalue="Python.os-lib-test" />
+        <item itemvalue="Python.lekcja01" />
       </list>
     </recent_temporary>
   </component>
@@ -252,14 +245,7 @@
       <option name="project" value="LOCAL" />
       <updated>1634669270109</updated>
     </task>
-    <task id="LOCAL-00005" summary="strona 80 rozdział 3 atrybut sys.argv">
-      <created>1634672840653</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1634672840654</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -277,7 +263,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="konsola" />
     <MESSAGE value="zakończono 1 rozdział" />
-    <MESSAGE value="strona 80 rozdział 3 atrybut sys.argv" />
-    <option name="LAST_COMMIT_MESSAGE" value="strona 80 rozdział 3 atrybut sys.argv" />
+    <option name="LAST_COMMIT_MESSAGE" value="zakończono 1 rozdział" />
   </component>
 </project>
