@@ -1,0 +1,393 @@
+Index: argparsetest.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/argparsetest.py b/argparsetest.py
+new file mode 100755
+--- /dev/null	(date 1634809707823)
++++ b/argparsetest.py	(date 1634809707823)
+@@ -0,0 +1,14 @@
++#!/usr/bin/env python
++import argparse
++import sys
++
++if __name__ == '__main__':
++    parser = argparse.ArgumentParser(description='Wyświetla wprowadzone dane wejściowe')
++    parser.add_argument('komunikat',help='Komunikat do wyświetlenia')
++    parser.add_argument('--twice','-t', help='Zrób to dwukrotnie',action='store_true')
++
++    args = parser.parse_args()
++
++    print(args.komunikat)
++    if args.twice:
++        print(args.komunikat)
+Index: clicklib.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/clicklib.py b/clicklib.py
+new file mode 100755
+--- /dev/null	(date 1634939483923)
++++ b/clicklib.py	(date 1634939483923)
+@@ -0,0 +1,14 @@
++#!/usr/bin/env python
++"""przykład użycia pakietu click"""
++import click
++@click.command()
++@click.option('--greeting',default = 'hej', help ='Jak chcesz pozdrowić użytkownika?')
++@click.option('--name',default='Tomek',help = 'Kogo chcesz pozdrowić?')
++def greet(greeting,name):
++    print(f"{greeting} {name}")
++
++if __name__ =='__main__':
++    greet()
++
++
++
+Index: argv_02.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/argv_02.py b/argv_02.py
+new file mode 100755
+--- /dev/null	(date 1634807420788)
++++ b/argv_02.py	(date 1634807420788)
+@@ -0,0 +1,30 @@
++#!/usr/bin/env python
++"""proste narzędzie wierza polecenia korzystające z atrybutu sys.argv"""
++
++import sys
++
++def say_it(greeting,target):
++    message = f'{greeting} {target}'
++    print(message)
++
++if __name__ == '__main__':
++    greeting = 'Witaj'
++    name = 'Bartek'
++
++    if '--help' in sys.argv:
++        help_message = f"Sposób użycia: {sys.argv[0]} --name<IMIE> --greeting <POWITANIE>"
++        print(help_message)
++
++    if '--name' in sys.argv:
++        name_index = sys.argv.index('--name') + 1
++
++        if name_index < len(sys.argv):
++            name = sys.argv[name_index]
++
++        if '--greeting' in sys.argv:
++            greeting_index = sys.argv.index('--greeting') + 1
++
++        if greeting_index < len(sys.argv):
++            greeting = sys.argv[greeting_index]
++
++say_it(greeting, name)
+\ No newline at end of file
+Index: say_it.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/say_it.py b/say_it.py
+new file mode 100755
+--- /dev/null	(date 1634805916309)
++++ b/say_it.py	(date 1634805916309)
+@@ -0,0 +1,8 @@
++#!/usr/bin/env python
++import sys
++
++if __name__ == '__main__':
++    print(f"Pierwszy argument: '{sys.argv[0]}'")
++    print(f"drugi argument: '{sys.argv[1]}'")
++    print(f"trzeci argument: '{sys.argv[2]}'")
++    print(f"czwarty argument: '{sys.argv[3]}'")
+Index: rozdzial3.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import subprocess\nimport sys\nimport os\n\nprint(sys.byteorder)\nprint(sys.getsizeof(1))\nprint(sys.platform)\n\nprint(os.getlogin())\n\ncp = subprocess.run(['ls','-ltra'], capture_output = True, universal_newlines = True)\n#print(cp.stdout)\n\n\ncperror = subprocess.run(['ls','-ltra'], capture_output = True, universal_newlines = True,check=True)\nprint(cperror.stdout)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/rozdzial3.py b/rozdzial3.py
+--- a/rozdzial3.py	(revision 0121ce0333404a3dc72da1a6f4e42ab955dbc212)
++++ b/rozdzial3.py	(date 1634805916289)
+@@ -1,7 +1,10 @@
++"""Aby wyeliminować konieczność jawnego wywoływania python w wierszu polecenia podczas uruchamiania
++skryptu, można dodać na początku skryptu linię "#!/usr/bin/env python" jak poniżej'''"""
++#!/usr/bin/env python
+ import subprocess
+ import sys
+ import os
+-
++"""
+ print(sys.byteorder)
+ print(sys.getsizeof(1))
+ print(sys.platform)
+@@ -13,4 +16,12 @@
+ 
+ 
+ cperror = subprocess.run(['ls','-ltra'], capture_output = True, universal_newlines = True,check=True)
+-print(cperror.stdout)
+\ No newline at end of file
++print(cperror.stdout)
++"""
++
++#!!!!!!!!!!!!!!!!sysargv
++if __name__ == '__main__':
++    print(f"Pierwszy argument: '{sys.argv[0]}'")
++    print(f"drugi argument: '{sys.argv[1]}'")
++    print(f"trzeci argument: '{sys.argv[2]}'")
++    print(f"czwarty argument: '{sys.argv[3]}'")
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"caac3974-af4f-4988-9d29-2694482ac0fa\" name=\"Changes\" comment=\"zakończono 1 rozdział\">\n      <change afterPath=\"$PROJECT_DIR$/rozdzial3.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/os-lib-test.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/os-lib-test.py\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Python Script\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"ProjectId\" id=\"1ylrnqGBkxzHNpYnElYYMoMpo2C\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"ASKED_SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\n    <property name=\"settings.editor.selected.configurable\" value=\"com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable\" />\n  </component>\n  <component name=\"RunManager\" selected=\"Python.rozdzial3\">\n    <configuration name=\"Unnamed\" type=\"PythonConfigurationType\" factoryName=\"Python\" nameIsGenerated=\"true\">\n      <module name=\"Moje-Projekty\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <envs>\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\n      </envs>\n      <option name=\"SDK_HOME\" value=\"/usr/bin/python3.9\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"\" />\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <option name=\"SCRIPT_NAME\" value=\"\" />\n      <option name=\"PARAMETERS\" value=\"\" />\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\n      <option name=\"MODULE_MODE\" value=\"false\" />\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\n      <option name=\"INPUT_FILE\" value=\"\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"lekcja01\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"Moje-Projekty\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <envs>\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\n      </envs>\n      <option name=\"SDK_HOME\" value=\"/usr/bin/python3.9\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/lekcja01.py\" />\n      <option name=\"PARAMETERS\" value=\"\" />\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\n      <option name=\"MODULE_MODE\" value=\"false\" />\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\n      <option name=\"INPUT_FILE\" value=\"\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"lekcja02\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"Moje-Projekty\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <envs>\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\n      </envs>\n      <option name=\"SDK_HOME\" value=\"/usr/bin/python3.9\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/lekcja02.py\" />\n      <option name=\"PARAMETERS\" value=\"\" />\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\n      <option name=\"MODULE_MODE\" value=\"false\" />\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\n      <option name=\"INPUT_FILE\" value=\"\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"lekcja03\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"Moje-Projekty\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <envs>\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\n      </envs>\n      <option name=\"SDK_HOME\" value=\"/usr/bin/python3.9\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/lekcja03.py\" />\n      <option name=\"PARAMETERS\" value=\"\" />\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\n      <option name=\"MODULE_MODE\" value=\"false\" />\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\n      <option name=\"INPUT_FILE\" value=\"\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"os-lib-test\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"Moje-Projekty\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <envs>\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\n      </envs>\n      <option name=\"SDK_HOME\" value=\"\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/os-lib-test.py\" />\n      <option name=\"PARAMETERS\" value=\"\" />\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\n      <option name=\"MODULE_MODE\" value=\"false\" />\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\n      <option name=\"INPUT_FILE\" value=\"\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"rozdzial3\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\n      <module name=\"Moje-Projekty\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <envs>\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\n      </envs>\n      <option name=\"SDK_HOME\" value=\"\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/rozdzial3.py\" />\n      <option name=\"PARAMETERS\" value=\"\" />\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\n      <option name=\"MODULE_MODE\" value=\"false\" />\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\n      <option name=\"INPUT_FILE\" value=\"\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"zadanie01\" type=\"PythonConfigurationType\" factoryName=\"Python\" nameIsGenerated=\"true\">\n      <module name=\"Moje-Projekty\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <envs>\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\n      </envs>\n      <option name=\"SDK_HOME\" value=\"\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/zadanie01.py\" />\n      <option name=\"PARAMETERS\" value=\"\" />\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\n      <option name=\"MODULE_MODE\" value=\"false\" />\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\n      <option name=\"INPUT_FILE\" value=\"\" />\n      <method v=\"2\" />\n    </configuration>\n    <list>\n      <item itemvalue=\"Python.Unnamed\" />\n      <item itemvalue=\"Python.zadanie01\" />\n      <item itemvalue=\"Python.lekcja03\" />\n      <item itemvalue=\"Python.lekcja02\" />\n      <item itemvalue=\"Python.lekcja01\" />\n      <item itemvalue=\"Python.os-lib-test\" />\n      <item itemvalue=\"Python.rozdzial3\" />\n    </list>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Python.rozdzial3\" />\n        <item itemvalue=\"Python.os-lib-test\" />\n        <item itemvalue=\"Python.lekcja01\" />\n        <item itemvalue=\"Python.lekcja02\" />\n        <item itemvalue=\"Python.lekcja03\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"SvnConfiguration\">\n    <configuration>$USER_HOME$/.subversion</configuration>\n  </component>\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"caac3974-af4f-4988-9d29-2694482ac0fa\" name=\"Changes\" comment=\"\" />\n      <created>1632837185831</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1632837185831</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"konsola\">\n      <created>1632837618665</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1632837618665</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"zakończono 1 rozdział\">\n      <created>1632842885625</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1632842885625</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"zakończono 1 rozdział\">\n      <created>1632959163095</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1632959163095</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"zakończono 1 rozdział\">\n      <created>1634669270109</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1634669270109</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"5\" />\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"konsola\" />\n    <MESSAGE value=\"zakończono 1 rozdział\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"zakończono 1 rozdział\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 0121ce0333404a3dc72da1a6f4e42ab955dbc212)
++++ b/.idea/workspace.xml	(date 1635342573011)
+@@ -4,10 +4,14 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="caac3974-af4f-4988-9d29-2694482ac0fa" name="Changes" comment="zakończono 1 rozdział">
+-      <change afterPath="$PROJECT_DIR$/rozdzial3.py" afterDir="false" />
++    <list default="true" id="caac3974-af4f-4988-9d29-2694482ac0fa" name="Changes" comment="strona 80 rozdział 3 atrybut sys.argv">
++      <change afterPath="$PROJECT_DIR$/argparsetest.py" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/argv_02.py" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/clicklib.py" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/podparsery.py" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/say_it.py" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/os-lib-test.py" beforeDir="false" afterPath="$PROJECT_DIR$/os-lib-test.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/rozdzial3.py" beforeDir="false" afterPath="$PROJECT_DIR$/rozdzial3.py" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -37,7 +41,7 @@
+     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+   </component>
+-  <component name="RunManager" selected="Python.rozdzial3">
++  <component name="RunManager" selected="Python.podparsery">
+     <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+       <module name="Moje-Projekty" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+@@ -59,19 +63,19 @@
+       <option name="INPUT_FILE" value="" />
+       <method v="2" />
+     </configuration>
+-    <configuration name="lekcja01" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++    <configuration name="argparsetest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+       <module name="Moje-Projekty" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+       <option name="PARENT_ENVS" value="true" />
+       <envs>
+         <env name="PYTHONUNBUFFERED" value="1" />
+       </envs>
+-      <option name="SDK_HOME" value="/usr/bin/python3.9" />
++      <option name="SDK_HOME" value="" />
+       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+-      <option name="IS_MODULE_SDK" value="false" />
++      <option name="IS_MODULE_SDK" value="true" />
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lekcja01.py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/argparsetest.py" />
+       <option name="PARAMETERS" value="" />
+       <option name="SHOW_COMMAND_LINE" value="false" />
+       <option name="EMULATE_TERMINAL" value="false" />
+@@ -80,19 +84,19 @@
+       <option name="INPUT_FILE" value="" />
+       <method v="2" />
+     </configuration>
+-    <configuration name="lekcja02" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++    <configuration name="argv_02" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+       <module name="Moje-Projekty" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+       <option name="PARENT_ENVS" value="true" />
+       <envs>
+         <env name="PYTHONUNBUFFERED" value="1" />
+       </envs>
+-      <option name="SDK_HOME" value="/usr/bin/python3.9" />
++      <option name="SDK_HOME" value="" />
+       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+-      <option name="IS_MODULE_SDK" value="false" />
++      <option name="IS_MODULE_SDK" value="true" />
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lekcja02.py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/argv_02.py" />
+       <option name="PARAMETERS" value="" />
+       <option name="SHOW_COMMAND_LINE" value="false" />
+       <option name="EMULATE_TERMINAL" value="false" />
+@@ -101,19 +105,19 @@
+       <option name="INPUT_FILE" value="" />
+       <method v="2" />
+     </configuration>
+-    <configuration name="lekcja03" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++    <configuration name="podparsery" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+       <module name="Moje-Projekty" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+       <option name="PARENT_ENVS" value="true" />
+       <envs>
+         <env name="PYTHONUNBUFFERED" value="1" />
+       </envs>
+-      <option name="SDK_HOME" value="/usr/bin/python3.9" />
++      <option name="SDK_HOME" value="" />
+       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+-      <option name="IS_MODULE_SDK" value="false" />
++      <option name="IS_MODULE_SDK" value="true" />
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lekcja03.py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/podparsery.py" />
+       <option name="PARAMETERS" value="" />
+       <option name="SHOW_COMMAND_LINE" value="false" />
+       <option name="EMULATE_TERMINAL" value="false" />
+@@ -122,7 +126,7 @@
+       <option name="INPUT_FILE" value="" />
+       <method v="2" />
+     </configuration>
+-    <configuration name="os-lib-test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++    <configuration name="rozdzial3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+       <module name="Moje-Projekty" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+       <option name="PARENT_ENVS" value="true" />
+@@ -134,7 +138,7 @@
+       <option name="IS_MODULE_SDK" value="true" />
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/os-lib-test.py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rozdzial3.py" />
+       <option name="PARAMETERS" value="" />
+       <option name="SHOW_COMMAND_LINE" value="false" />
+       <option name="EMULATE_TERMINAL" value="false" />
+@@ -143,7 +147,7 @@
+       <option name="INPUT_FILE" value="" />
+       <method v="2" />
+     </configuration>
+-    <configuration name="rozdzial3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++    <configuration name="say_it" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+       <module name="Moje-Projekty" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+       <option name="PARENT_ENVS" value="true" />
+@@ -155,7 +159,7 @@
+       <option name="IS_MODULE_SDK" value="true" />
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rozdzial3.py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/say_it.py" />
+       <option name="PARAMETERS" value="" />
+       <option name="SHOW_COMMAND_LINE" value="false" />
+       <option name="EMULATE_TERMINAL" value="false" />
+@@ -188,19 +192,19 @@
+     <list>
+       <item itemvalue="Python.Unnamed" />
+       <item itemvalue="Python.zadanie01" />
+-      <item itemvalue="Python.lekcja03" />
+-      <item itemvalue="Python.lekcja02" />
+-      <item itemvalue="Python.lekcja01" />
+-      <item itemvalue="Python.os-lib-test" />
++      <item itemvalue="Python.argparsetest" />
++      <item itemvalue="Python.argv_02" />
++      <item itemvalue="Python.podparsery" />
+       <item itemvalue="Python.rozdzial3" />
++      <item itemvalue="Python.say_it" />
+     </list>
+     <recent_temporary>
+       <list>
++        <item itemvalue="Python.podparsery" />
++        <item itemvalue="Python.argparsetest" />
++        <item itemvalue="Python.argv_02" />
+         <item itemvalue="Python.rozdzial3" />
+-        <item itemvalue="Python.os-lib-test" />
+-        <item itemvalue="Python.lekcja01" />
+-        <item itemvalue="Python.lekcja02" />
+-        <item itemvalue="Python.lekcja03" />
++        <item itemvalue="Python.say_it" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -244,7 +248,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1634669270109</updated>
+     </task>
+-    <option name="localTasksCounter" value="5" />
++    <task id="LOCAL-00005" summary="strona 80 rozdział 3 atrybut sys.argv">
++      <created>1634672840653</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1634672840654</updated>
++    </task>
++    <option name="localTasksCounter" value="6" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -262,6 +273,7 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="konsola" />
+     <MESSAGE value="zakończono 1 rozdział" />
+-    <option name="LAST_COMMIT_MESSAGE" value="zakończono 1 rozdział" />
++    <MESSAGE value="strona 80 rozdział 3 atrybut sys.argv" />
++    <option name="LAST_COMMIT_MESSAGE" value="strona 80 rozdział 3 atrybut sys.argv" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: podparsery.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/podparsery.py b/podparsery.py
+new file mode 100755
+--- /dev/null	(date 1634819577664)
++++ b/podparsery.py	(date 1634819577664)
+@@ -0,0 +1,39 @@
++#!/usr/bin/env python
++"""proste narzędzie wierza polecenia korzystające z atrybutu sys.argv"""
++"""MEGA ZAJEBISTY PATENT!!!!!!"""
++import argparse
++
++def sail():
++    ship_name = 'Twoja żaglówka'
++    print(f"{ship_name} stawia żagle")
++
++def list_ships():
++    ships = ['John B', 'Yankee Clipper','Pequod']
++    print(f"Żaglówki:{','.join(ships)}")
++
++def greet(greeting, name):
++    message = f'{greeting}{name}'
++    print(message)
++
++if __name__ =='__main__':
++    parser = argparse.ArgumentParser(description='Żeglarze i Żaglówki')
++
++    parser.add_argument('--twice','-t', help = "zrób to dwukrotnie", action = 'store_true')
++    subparsers = parser.add_subparsers(dest = 'func')
++    ship_parser = subparsers.add_parser('ships',help = 'Komendy związane z żaglówkami')
++
++    ship_parser.add_argument('command', choices=['list', 'sail'])
++
++    sailor_parser = subparsers.add_parser('sailors', help = "komendy zwiazane z zeglarzami")
++
++    sailor_parser.add_argument('name', help = 'Imię żeglarza')
++
++    sailor_parser.add_argument('--greeting','-g',help='pozdrowienie',default='Ahoj żeglarzu')
++
++    args = parser.parse_args()
++    if args.func == 'sailors':
++        greet(args.greeting,args.name)
++    elif args.command == 'list':
++        list_ships()
++    else:
++        sail()
+\ No newline at end of file
